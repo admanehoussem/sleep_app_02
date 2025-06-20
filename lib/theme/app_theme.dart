@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const primaryColor = Color.fromARGB(255, 48, 49, 150);  // Modern Indigo
+  static const primaryColor = Color.fromARGB(255, 48, 49, 150); // Modern Indigo
   static const secondaryColor = Color(0xFF8B5CF6); // Modern Purple
   static const backgroundColor = Color(0xFFF8FAFC); // Light Gray Background
   static const cardColor = Colors.white;
@@ -17,7 +17,6 @@ class AppTheme {
       primaryColor: primaryColor,
       scaffoldBackgroundColor: backgroundColor,
       fontFamily: GoogleFonts.inter().fontFamily,
-      
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -29,15 +28,13 @@ class AppTheme {
         ),
         iconTheme: const IconThemeData(color: Colors.black87),
       ),
-
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
         color: cardColor,
       ),
-
       textTheme: TextTheme(
         headlineLarge: GoogleFonts.inter(
           fontSize: 28,
@@ -68,7 +65,6 @@ class AppTheme {
           color: Colors.black87,
         ),
       ),
-
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryColor,
@@ -84,7 +80,6 @@ class AppTheme {
           ),
         ),
       ),
-
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
         selectedItemColor: primaryColor,
@@ -119,4 +114,4 @@ class AppTheme {
       ],
     );
   }
-} 
+}
