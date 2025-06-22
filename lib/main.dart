@@ -3,8 +3,16 @@ import 'screens/home_screen.dart';
 import 'screens/dream_journal_screen.dart';
 import 'screens/relaxation_screen.dart';
 import 'screens/sleep_tracking_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    debugPrint('Firebase initialization failed: $e');
+    // Continue without Firebase for now
+  }
   runApp(const SleepWellnessApp());
 }
 
@@ -30,12 +38,12 @@ class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
 
   @override
-  _MainNavigationScreenState createState() => _MainNavigationScreenState();
+  State<MainNavigationScreen> createState() => _MainNavigationScreenState();
 }
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
-  
+
   final List<Widget> _screens = [
     const HomeScreen(),
     const SleepTrackingScreen(),

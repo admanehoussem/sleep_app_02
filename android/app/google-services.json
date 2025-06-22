@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128288369919",
+    "project_id": "amalu-b4962",
+    "storage_bucket": "amalu-b4962.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128288369919:android:3ca94f43928a8f06dd70ca",
+        "android_client_info": {
+          "package_name": "com.example.amalu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRaG6YXIGf3HZTVQuk2nRqHFkMsFhDsr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
