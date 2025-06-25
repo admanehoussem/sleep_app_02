@@ -12,19 +12,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Amalu',
+        title: Text(
+          'Amalu',
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            color: const Color.fromARGB(255, 255, 255, 255),
-            fontWeight: FontWeight.bold,
-          ),
+                color: const Color.fromARGB(255, 255, 255, 255),
+                fontWeight: FontWeight.bold,
+              ),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications_none_rounded),
+            icon: const Icon(Icons.notifications_none_rounded,
+                color: Colors.white),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings, color: Colors.white),
             onPressed: () {},
           ),
         ],
-       backgroundColor: AppTheme.primaryColor ,
+        backgroundColor: AppTheme.primaryColor,
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -58,16 +64,16 @@ class HomeScreen extends StatelessWidget {
           Text(
             'Good Evening!',
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
             'Ready for a peaceful night\'s sleep?',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: Colors.white.withOpacity(0.9),
-            ),
+                  color: Colors.white.withOpacity(0.9),
+                ),
           ),
         ],
       ),
@@ -89,9 +95,11 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildSleepStat(context, 'Duration', '7h 32m', Icons.access_time_rounded),
+              _buildSleepStat(
+                  context, 'Duration', '7h 32m', Icons.access_time_rounded),
               _buildSleepStat(context, 'Quality', '4.2/5', Icons.star_rounded),
-              _buildSleepStat(context, 'Deep Sleep', '2h 15m', Icons.bedtime_rounded),
+              _buildSleepStat(
+                  context, 'Deep Sleep', '2h 15m', Icons.bedtime_rounded),
             ],
           ),
         ],
@@ -99,7 +107,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSleepStat(BuildContext context, String label, String value, IconData icon) {
+  Widget _buildSleepStat(
+      BuildContext context, String label, String value, IconData icon) {
     return Column(
       children: [
         Icon(icon, color: AppTheme.primaryColor, size: 28),
@@ -107,14 +116,14 @@ class HomeScreen extends StatelessWidget {
         Text(
           value,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
+                fontWeight: FontWeight.bold,
+              ),
         ),
         Text(
           label,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: Colors.grey[600],
-          ),
+                color: Colors.grey[600],
+              ),
         ),
       ],
     );
@@ -146,7 +155,8 @@ class HomeScreen extends StatelessWidget {
                 if (context.mounted) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SleepTrackingScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SleepTrackingScreen()),
                   );
                 }
               },
@@ -160,7 +170,8 @@ class HomeScreen extends StatelessWidget {
                 if (context.mounted) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const DreamJournalScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const DreamJournalScreen()),
                   );
                 }
               },
@@ -174,7 +185,8 @@ class HomeScreen extends StatelessWidget {
                 if (context.mounted) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const RelaxationScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const RelaxationScreen()),
                   );
                 }
               },
@@ -188,7 +200,8 @@ class HomeScreen extends StatelessWidget {
                 if (context.mounted) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SleepTipsScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SleepTipsScreen()),
                   );
                 }
               },
@@ -199,7 +212,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildActionCard(BuildContext context, String title, IconData icon, Color color, VoidCallback onTap) {
+  Widget _buildActionCard(BuildContext context, String title, IconData icon,
+      Color color, VoidCallback onTap) {
     return Container(
       decoration: AppTheme.cardDecoration(),
       child: Material(
@@ -225,8 +239,8 @@ class HomeScreen extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w500,
-                  ),
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
               ],
             ),
@@ -283,8 +297,9 @@ class HomeScreen extends StatelessWidget {
               color: AppTheme.primaryColor.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Icon(Icons.nights_stay_rounded, 
-              color: AppTheme.primaryColor, 
+            child: const Icon(
+              Icons.nights_stay_rounded,
+              color: AppTheme.primaryColor,
               size: 20,
             ),
           ),
@@ -300,8 +315,8 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   date,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.grey[600],
-                  ),
+                        color: Colors.grey[600],
+                      ),
                 ),
               ],
             ),
@@ -311,4 +326,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

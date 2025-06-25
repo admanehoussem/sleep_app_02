@@ -3,6 +3,8 @@ import 'screens/home_screen.dart';
 import 'screens/dream_journal_screen.dart';
 import 'screens/relaxation_screen.dart';
 import 'screens/sleep_tracking_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -28,9 +30,41 @@ class SleepWellnessApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'Roboto',
       ),
-      home: const MainNavigationScreen(),
+      home: const AuthFlow(),
       debugShowCheckedModeBanner: false,
     );
+  }
+}
+
+class AuthFlow extends StatefulWidget {
+  const AuthFlow({super.key});
+
+  @override
+  State<AuthFlow> createState() => _AuthFlowState();
+}
+
+class _AuthFlowState extends State<AuthFlow> {
+  bool _showLogin = false;
+  bool _isAuthenticated = false;
+
+  void _onAuthSuccess() {
+    setState(() => _isAuthenticated = true);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_isAuthenticated) {
+      return const MainNavigationScreen();
+    }
+    return _showLogin
+        ? LoginScreen(
+            onSignUpTap: () => setState(() => _showLogin = false),
+            onLoginSuccess: _onAuthSuccess,
+          )
+        : SignUpScreen(
+            onLoginTap: () => setState(() => _showLogin = true),
+            onSignUpSuccess: _onAuthSuccess,
+          );
   }
 }
 
