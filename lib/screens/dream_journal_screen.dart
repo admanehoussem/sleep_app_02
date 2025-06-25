@@ -36,7 +36,7 @@ class _DreamJournalScreenState extends State<DreamJournalScreen> {
         backgroundColor: Colors.purple,
         actions: [
           IconButton(
-            icon: const Icon(Icons.search),
+            icon: const Icon(Icons.search, color: Colors.white),
             onPressed: () => _showSearchDialog(),
           ),
         ],
@@ -53,7 +53,7 @@ class _DreamJournalScreenState extends State<DreamJournalScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddDreamDialog(),
         backgroundColor: Colors.purple,
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }
@@ -174,7 +174,7 @@ class _DreamJournalScreenState extends State<DreamJournalScreen> {
   String _formatDate(DateTime date) {
     final now = DateTime.now();
     final difference = now.difference(date).inDays;
-    
+
     if (difference == 0) return 'Today';
     if (difference == 1) return 'Yesterday';
     return '$difference days ago';
