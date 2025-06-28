@@ -9,12 +9,23 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  try {
-    await Firebase.initializeApp();
-  } catch (e) {
-    debugPrint('Firebase initialization failed: $e');
-    // Continue without Firebase for now
-  }
+
+  // Temporarily disabled Firebase for testing
+  // try {
+  //   await Firebase.initializeApp(
+  //     options: const FirebaseOptions(
+  //       apiKey: "your-api-key",
+  //       appId: "your-app-id",
+  //       messagingSenderId: "your-sender-id",
+  //       projectId: "your-project-id",
+  //     ),
+  //   );
+  //   debugPrint('Firebase initialized successfully');
+  // } catch (e) {
+  //   debugPrint('Firebase initialization failed: $e');
+  //   // Continue without Firebase for now
+  // }
+
   runApp(const SleepWellnessApp());
 }
 

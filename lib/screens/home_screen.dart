@@ -4,6 +4,7 @@ import 'dream_journal_screen.dart';
 import 'relaxation_screen.dart';
 import 'sleep_tips_screen.dart';
 import '../theme/app_theme.dart';
+import 'settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,7 +28,12 @@ class HomeScreen extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.settings, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
           ),
         ],
         backgroundColor: AppTheme.primaryColor,
